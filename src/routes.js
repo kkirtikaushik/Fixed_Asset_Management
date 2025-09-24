@@ -43,14 +43,39 @@ const routes = [
     name: "Floor Management",
     layout: "/admin",
     icon: <MdEventNote  className="h-6 w-6" />,
-    path: "data-tables",
+     children: [
+    {
+      name: "Floors List",
+      layout: "/admin",
+      path: "floors-list",
+      component: <DataTables />,
+    },
+    {
+      name: "Add Floor",
+      layout: "/admin",
+      path: "add-floor",
+      component: <DataTables />,
+    },],
     component: <DataTables />,
   },
   {
     name: "Maintenance",
     layout: "/admin",
-    path: "profile",
     icon: <MdHandyman  className="h-6 w-6" />,
+    children: [
+    {
+      name: "Requests",
+      layout: "/admin",
+      path: "maintenance-requests",
+      component: <Profile />,
+    },
+    {
+      name: "Schedule",
+      layout: "/admin",
+      path: "maintenance-schedule",
+      component: <Profile />,
+    },
+  ],
     component: <Profile />,
   },
   {
