@@ -17,6 +17,10 @@ import {
   MdBarChart,
   MdPerson,
   MdLock,
+  MdAddLocation,
+  MdEventNote,
+  MdHandyman,
+  MdSell,
 } from "react-icons/md";
 
 const routes = [
@@ -28,7 +32,36 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: "NFT Marketplace",
+    name: "Asset Location",
+    layout: "/admin",
+    path: "nft-marketplace",
+    icon: <MdAddLocation className="h-6 w-6" />,
+    component: <NFTMarketplace />,
+    secondary: true,
+  },
+  {
+    name: "Floor Management",
+    layout: "/admin",
+    icon: <MdEventNote  className="h-6 w-6" />,
+    path: "data-tables",
+    component: <DataTables />,
+  },
+  {
+    name: "Maintenance",
+    layout: "/admin",
+    path: "profile",
+    icon: <MdHandyman  className="h-6 w-6" />,
+    component: <Profile />,
+  },
+  {
+    name: "Valuation",
+    layout: "/admin",
+    icon: <MdBarChart className="h-6 w-6" />,
+    path: "data-tables",
+    component: <DataTables />,
+  },
+  {
+    name: "Purchase",
     layout: "/admin",
     path: "nft-marketplace",
     icon: <MdOutlineShoppingCart className="h-6 w-6" />,
@@ -36,32 +69,20 @@ const routes = [
     secondary: true,
   },
   {
-    name: "Data Tables",
-    layout: "/admin",
-    icon: <MdBarChart className="h-6 w-6" />,
-    path: "data-tables",
-    component: <DataTables />,
+    name: "Scrap Sales",
+    layout: "/rtl",
+    path: "rtl",
+    icon: <MdSell className="h-6 w-6" />,
+    component: <RTLDefault />,
   },
-  {
-    name: "Profile",
-    layout: "/admin",
-    path: "profile",
-    icon: <MdPerson className="h-6 w-6" />,
-    component: <Profile />,
-  },
+  
+  
   {
     name: "Sign In",
     layout: "/auth",
     path: "sign-in",
     icon: <MdLock className="h-6 w-6" />,
     component: <SignIn />,
-  },
-  {
-    name: "RTL Admin",
-    layout: "/rtl",
-    path: "rtl",
-    icon: <MdHome className="h-6 w-6" />,
-    component: <RTLDefault />,
   },
 ];
 export default routes;
